@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box{
+            padding: 100px 0;
+            margin: 20px;
+            width: 400px;
+            background-color: #ddd;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+    <title>Vue</title>
+</head>
+<body>
+    <h1>Hello Vue :)</h1>
+
+    <div id="app">
+        <div v-if="Leader">
+            <p>{{title}} - {{age}}</p>
+        </div>
+        <div v-else>
+            <p>Nothing to show!</p>
+        </div>
+        <button @click="showLeader">Show a  Leader</button><br><br>
+        
+        <div>
+            <!-- click event -->
+            <button v-on:click="age++">Increment</button>&nbsp;
+            <button v-on:click="age--">Decrement</button><br><br>
+            <div v-on:click="title = 'Emile'">change title</div>
+        </div>
+        
+
+        <!-- mouse events -->
+        <div class="box" @mouseover="handleEvent">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMouseMove">position - {{x}} - {{y}}</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
