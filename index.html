@@ -13,6 +13,18 @@
             display: inline-block;
             text-align: center;
         }
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            padding: 10px 20px;
+            background-color: #ddd;
+            margin: 20px auto;
+        }
+        li.fav{
+            background-color: pink;
+        }
     </style>
     <title>Vue</title>
 </head>
@@ -27,6 +39,16 @@
             <p>Nothing to show!</p>
         </div>
         <button @click="showLeader">Show a  Leader</button><br><br>
+
+        <!-- outputting the lists -->
+        <div>
+            <ul>
+                <li v-for="book in books" :class="{fav: book.isFav}" @click="toogleFav(book)">
+                    <h3>{{book.title}}</h3> 
+                    <p>{{book.author}}</p>
+                </li>
+            </ul>
+        </div>
         
         <div>
             <!-- click event -->
